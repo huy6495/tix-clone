@@ -1,0 +1,30 @@
+#news-total {
+  padding-top: 20px;
+}
+
+#news-total .navCenter button:hover {
+  font-size: 24px;
+}
+
+.card-detail {
+  border: none;
+}
+
+.card-detail img {
+  border-radius: 3%;
+}
+
+.more-btn {
+  padding: 7px 22px;
+  border-radius: 5px;
+  border: 1px solid #949494;
+  background-color: white;
+  color: #949494;
+  transition: 0.5s;
+}
+
+.more-btn:hover {
+  color: white;
+  background-color: #fa5238;
+  border: none;
+}

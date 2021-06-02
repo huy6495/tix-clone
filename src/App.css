@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "SF Regular";
+  src: url(./assets/font/SF-UI-Display-Regular.otf);
+  src: url(./assets/font/SF-UI-Display-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "SF Medium";
+  src: url(./assets/font/SF-UI-Display-Medium.otf);
+  src: url(./assets/font/SF-UI-Display-Medium.otf) format("opentype");
+}
+@font-face {
+  font-family: "SF Text Regular";
+  src: url(./assets/font/SF-UI-Text-Regular.otf);
+  src: url(./assets/font/SF-UI-Text-Regular.otf) format("opentype");
+}
+body {
+  background-color: #fff;
+  font-family: "SF Text Regular";
+  overflow-x: hidden;
+}
+.titleDisplay {
+  font-family: "SF Regular";
+}
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}

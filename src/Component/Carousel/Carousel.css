@@ -1,0 +1,29 @@
+.carouselIndicators {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  height: 100px;
+  z-index: 2;
+  opacity: 0.5;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 0%;
+  /* left: 0; */
+  /* right: 0; */
+}
+.sliderTrailer {
+  z-index: 1;
+  width: 100%;
+  margin-top: 60px;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  border: none;
+  /* background-color: #e8e8e8; */
+}

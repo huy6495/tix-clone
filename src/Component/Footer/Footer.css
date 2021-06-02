@@ -1,0 +1,100 @@
+#footer{
+background-color: #222;
+padding-top: 20px;
+padding-bottom: 20px;
+color: #949494;
+}
+
+.noPadding{
+    margin-left:-12px;
+}
+
+.mainMaxWidth{
+    max-width: 940px;
+    float: none;
+    margin: auto;
+    clear: both;
+}
+
+.title{
+    color: #fff;
+    font-size: 80%;
+}
+
+.noPaddingLeft{
+    padding: 0;
+}
+
+.fontSizeA a{
+    font-size: 12px !important;
+    font-size: 80%;
+    font-weight: 700;
+    white-space: nowrap;
+    color: #949494;
+    display: block;
+    transition: all .2s;
+    line-height: 2.3;
+    cursor: pointer;
+}
+
+.fontSizeA a:hover{
+    color: #fff!important;
+}
+
+.linePartner{
+    margin-bottom: 15px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.iconConnect{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+}
+
+.iconApp{
+    background: 0 0;
+    height: 30px;
+    width: auto;
+    margin: 10px;
+}
+
+.imgFooter{
+    text-align: center;
+    padding: 0;
+}
+
+.vngIcon{
+    width: 80px;
+    height: auto;
+}
+
+.infoFooter{
+    color: #fff;
+    white-space: nowrap;
+    font-size: 70%;
+}
+
+.imgFooter{
+    text-align: center;
+    padding: 0;
+}
+
+.infoFooter span:first-child {
+    color: #fff;
+}
+
+.infoFooter span {
+    display: block;
+    line-height: 1.8;
+    color: #949494;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.imgBoCo{
+    width: 130px;
+    float: right;
+}

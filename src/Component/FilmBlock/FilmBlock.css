@@ -1,0 +1,48 @@
+#homeMovies {
+  padding-top: 75px;
+}
+
+.mainMaxWidth {
+  max-width: 940px;
+  float: none;
+  margin: auto;
+  clear: both;
+}
+
+.nav-tabs {
+  justify-content: center;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.navCenter li.active button {
+  font-size: 24px;
+}
+
+.navCenter button {
+  font-size: 20px;
+  line-height: 24px;
+  height: 24px;
+}
+
+.nav-tabs.navCenter li button {
+  color: #fa5238;
+}
+
+.nav-tabs.navCenter li button {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#homeMovies .navCenter button:hover {
+  font-size: 24px;
+}
+
+.nav-tabs .nav-link.active {
+  color: #fa5238;
+  font-size: 24px;
+}

@@ -1,0 +1,48 @@
+/* .slick-slider {
+  margin-top: 300px;
+} */
+
+/* .slick-arrow {
+  background: #000;
+}
+
+.slick-slider img {
+  height: 200px;
+  width: 200px;
+} */
+
+.nameFilm {
+  height: 42px;
+  max-height: 42px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  line-height: 22px;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nameFilm span {
+  font-size: 14px;
+  background-color: #fb4226;
+  border-radius: 4px;
+  padding: 0 5px;
+  color: #fff;
+  min-width: 33px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.timeFilm {
+  font-size: 13px;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+  margin-top: 8px;
+}
+
+.info {
+  padding: 5px 0;
+  text-align: start;
+}
