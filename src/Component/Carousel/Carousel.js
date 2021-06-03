@@ -1,5 +1,6 @@
-import React, { Component } from "react";
 import "./Carousel.css";
+
+import React from "react";
 
 //slider import
 import Slider from "react-slick";
@@ -44,35 +45,33 @@ export function SampleNextArrow(props) {
 }
 
 //react functional component
-export default class Carousel extends Component {
-  render() {
-    const settings2 = {
-      dots: true,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: false,
-      speed: 2000,
-      autoplaySpeed: 2000,
-      nextArrow: <SampleNextArrow right="30px" />,
-      prevArrow: <SamplePrevArrow left="30px" />,
-      appendDots: (dots) => <ul> {dots} </ul>,
-    };
-    return (
-      <div className="sliderTrailer ">
-        <Slider {...settings2}>
-          <div>
-            <img style={{ width: "100%", height: "620px" }} src={dietQuy}></img>
-          </div>
-          <div>
-            <img style={{ width: "100%", height: "620px" }} src={latMat}></img>
-          </div>
-          <div>
-            <img style={{ width: "100%", height: "620px" }} src={trangTi}></img>
-          </div>
-        </Slider>
-        <HomeTool></HomeTool>
-      </div>
-    );
-  }
+export default function Carousel() {
+  const settings2 = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 1500,
+    nextArrow: <SampleNextArrow right="30px" />,
+    prevArrow: <SamplePrevArrow left="30px" />,
+    appendDots: (dots) => <ul> {dots} </ul>,
+  };
+  return (
+    <div className="sliderTrailer ">
+      <Slider {...settings2}>
+        <div>
+          <img style={{ width: "100%", height: "620px" }} src={dietQuy}></img>
+        </div>
+        <div>
+          <img style={{ width: "100%", height: "620px" }} src={latMat}></img>
+        </div>
+        <div>
+          <img style={{ width: "100%", height: "620px" }} src={trangTi}></img>
+        </div>
+      </Slider>
+      <HomeTool></HomeTool>
+    </div>
+  );
 }

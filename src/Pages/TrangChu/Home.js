@@ -7,6 +7,7 @@ import FilmBlock from "../../Component/FilmBlock/FilmBlock";
 import { Fragment } from "react";
 import Cinema from "../../Component/GroupCinema/Cinema";
 import Footer from "../../Component/Footer/Footer";
+import HomeApp from "../../Component/HomeApp/HomeApp";
 
 export default class Home extends Component {
   render() {
@@ -31,6 +32,7 @@ export default class Home extends Component {
         {/* <Dropdown /> */}
 
         <br></br>
+        <HomeApp />
         <Footer />
       </Fragment>
     );

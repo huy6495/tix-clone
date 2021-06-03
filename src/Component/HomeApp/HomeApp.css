@@ -1,0 +1,86 @@
+#wraphomeApp {
+  margin: 0;
+}
+
+#homeApp {
+  padding: 120px 0 80px 0;
+  background-size: contain;
+  height: 100%;
+}
+
+.mainMaxWidth {
+  max-width: 940px;
+  float: none;
+  margin: auto;
+  clear: both;
+}
+
+.textLeft {
+  color: #fff;
+  font-weight: 700;
+  font-size: xx-large;
+}
+p {
+  margin: 0 0 10px;
+}
+
+.textSmallLeft {
+  color: #fff;
+  font-size: medium;
+}
+
+.buttonLeft {
+  background-color: #fb4226;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: medium;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+}
+.textAppUnder {
+  color: #fff;
+  padding-top: 10px;
+}
+
+.tagA {
+  color: #fff;
+}
+.tagA a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tagA a:hover {
+  color: #fff !important;
+}
+
+.right {
+  position: relative;
+  padding: 0;
+  transform: translate(18%, -15%);
+}
+
+.img-phone {
+  padding: 0 28%;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#sliderScreen {
+  position: absolute;
+  padding: 1.5% 29.3% 0 29.3%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#sliderScreen .slick-list {
+  border-radius: 20px;
+}
