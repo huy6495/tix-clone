@@ -27,3 +27,7 @@
   border: none;
   /* background-color: #e8e8e8; */
 }
+
+.slick-list > div > div > div {
+  position: relative;
+}

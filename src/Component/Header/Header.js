@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
 import img from "../../assets/img/web-logo.png";
 import imgLogin from "../../assets/img/avatar.png";
 import imgLocation from "../../assets/img/location-header.png";

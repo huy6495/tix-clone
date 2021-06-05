@@ -14,6 +14,7 @@ import dietQuy from "../../assets/img/phim/ban-tay-diet-quy-evil-expeller-161777
 import latMat from "../../assets/img/phim/lat-mat-48h-16176188609123_215x318.png";
 import trangTi from "../../assets/img/phim/trang-ti-16194120693380_215x318.jpeg";
 import HomeTool from "../HomeTool/HomeTool";
+import PlayButton from "../PlayButton/PlayButton";
 
 //customize arrow carousel
 export function SamplePrevArrow(props) {
@@ -51,7 +52,7 @@ export default function Carousel() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 2000,
     autoplaySpeed: 1500,
     nextArrow: <SampleNextArrow right="30px" />,
@@ -63,6 +64,7 @@ export default function Carousel() {
       <Slider {...settings2}>
         <div>
           <img style={{ width: "100%", height: "620px" }} src={dietQuy}></img>
+          <PlayButton></PlayButton>
         </div>
         <div>
           <img style={{ width: "100%", height: "620px" }} src={latMat}></img>

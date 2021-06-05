@@ -8,6 +8,7 @@ import { Fragment } from "react";
 import Cinema from "../../Component/GroupCinema/Cinema";
 import Footer from "../../Component/Footer/Footer";
 import HomeApp from "../../Component/HomeApp/HomeApp";
+import ModalTrailer from "../../Component/ModalTrailer/Modal";
 
 export default class Home extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class Home extends Component {
         <div className="container text-center">
           <FilmBlock />
         </div>
+        <ModalTrailer />
 
         <Cinema />
 

@@ -6,7 +6,6 @@ import "./Cinema.css";
 //image import
 import imgLatMat from "../../assets/img/contentFilm/lat-mat-48h-16176188609123_215x318.png";
 import imgThienThan from "../../assets/img/contentFilm/thien-than-ho-menh-16157907251398_215x318.jpeg";
-
 import BackgroundCinema from "../BackgroundCinema/BackgroundCinema";
 
 //import logo of cinema
@@ -35,7 +34,7 @@ export default function Cinema() {
     calendar: imgLatMat,
   });
 
-  let renderListCinema = () => {
+  const renderListCinema = () => {
     return arrCine.map((cine, index) => {
       return (
         <li
@@ -56,7 +55,7 @@ export default function Cinema() {
     });
   };
 
-  let renderLocation = () => {
+  const renderLocation = () => {
     let content = [];
     for (let i = 0; i < cinema.location; i++) {
       content.push(
@@ -86,7 +85,7 @@ export default function Cinema() {
     return content;
   };
 
-  let renderCalendar = () => {
+  const renderCalendar = () => {
     let content = [];
     for (let i = 0; i < 4; i++) {
       content.push(

@@ -1,0 +1,40 @@
+svg#play {
+  width: 100%;
+  padding: 15% 45%;
+  display: inline-block;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg#play #triangle {
+  fill: rgba(22, 22, 22, 0);
+  transition: 500ms;
+  transform-origin: 50% 50%;
+}
+svg#play:hover #triangle {
+  fill: #fa5238;
+  transform-origin: 50% 50%;
+}
+
+svg #lineOne,
+svg #lineTwo {
+  transform-origin: 50% 50%;
+  transition: 1s;
+}
+
+svg:hover #lineOne {
+  transform: rotate(260deg);
+  -webkit-transform: rotate(260deg);
+  -moz-transform: rotate(260deg);
+  -o-transform: rotate(260deg);
+  transform-origin: 50% 50%;
+}
+
+svg:hover #lineTwo {
+  transform: rotate(-450deg);
+  transform-origin: 50% 50%;
+}
