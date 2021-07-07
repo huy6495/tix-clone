@@ -15,9 +15,9 @@ const arraySlide = [slide1, slide2, slide3, slide4, slide5];
 
 export default class HomeApp extends Component {
   renderSlide() {
-    return arraySlide.map((slide) => {
+    return arraySlide.map((slide, index) => {
       return (
-        <div style={{ borderRadius: "20px" }}>
+        <div key={index} style={{ borderRadius: "20px" }}>
           <img
             src={slide}
             style={{
@@ -60,18 +60,20 @@ export default class HomeApp extends Component {
                   và đổi quà hấp dẫn.
                 </p>
                 <br />
-                <button class="buttonLeft">App miễn phí - Tải về ngay!</button>
-                <p class="textAppUnder">
+                <button className="buttonLeft">
+                  App miễn phí - Tải về ngay!
+                </button>
+                <p className="textAppUnder">
                   TIX có hai phiên bản
                   <a
-                    class="tagA"
+                    className="tagA"
                     target="_blank"
                     href="https://itunes.apple.com/us/app/123phim-mua-ve-lien-tay-chon/id615186197?mt=8"
                   >
                     iOS
                   </a>
                   <a
-                    class="tagA"
+                    className="tagA"
                     target="_blank"
                     href="https://itunes.apple.com/us/app/123phim-mua-ve-lien-tay-chon/id615186197?mt=8"
                   >

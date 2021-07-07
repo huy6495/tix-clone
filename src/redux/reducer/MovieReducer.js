@@ -25,19 +25,47 @@ const initialState = {
     },
   ],
   detailMovie: {},
+  isLoadingDetail: true,
+
+  detailMovieHomeTool: {},
+
+  reSelectMovie: false,
+
+  objectLichChieu: {},
+
+  objectXuatChieu: {},
 };
 
 export const MovieReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_MANG_PHIM": {
-      // state.mangPhim = action.mangPhim;
-
-      return { ...state, mangPhim: action.mangPhim };
+    case "SET_ARRAY_MOVIE": {
+      return { ...state, arrayMovie: action.arrayMovie };
+    }
+    case "SET_DETAIL_MOVIE": {
+      state.detailMovie = action.detailMovie;
+      state.isLoadingDetail = false;
+      return { ...state };
+    }
+    case "SET_CINEMA_HOME_TOOL": {
+      console.log(action.type);
+      return { ...state, reSelectMovie: true };
     }
 
-    case "SET_CHI_TIET_PHIM": {
-      state.chiTietPhim = action.chiTietPhim;
-      return { ...state };
+    case "SET_DETAIL_MOVIE_HOMETOOL": {
+      return {
+        ...state,
+        detailMovieHomeTool: action.detailMovieHomeTool,
+        reSelectMovie: false,
+      };
+    }
+    case "SET_DATE_MOVIE_HOMETOOL": {
+      return {
+        ...state,
+        objectLichChieu: action.objectLichChieu,
+      };
+    }
+    case "SET_XUATCHIEU_MOVIE_HOMETOOL": {
+      return { ...state, objectXuatChieu: action.objectXuatChieu };
     }
     default:
       return state;

@@ -21,10 +21,10 @@ export default function ContentNews() {
                 đuổi gay cấn thót tim fans hâm mộ.
               </p>
               <a href="#" className="btn btn-light">
-                <i class="far fa-thumbs-up"></i> 1
+                <i className="far fa-thumbs-up"></i> 1
               </a>
               <a href="#" className="btn btn-light mx-2">
-                <i class="far fa-comment-alt"></i> 3
+                <i className="far fa-comment-alt"></i> 3
               </a>
             </div>
           </div>
@@ -43,10 +43,10 @@ export default function ContentNews() {
                 thuyết, phim hoạt hình, hay thậm chí là cả trò chơi điện tử.
               </p>
               <a href="#" className="btn btn-light">
-                <i class="far fa-thumbs-up"></i> 0
+                <i className="far fa-thumbs-up"></i> 0
               </a>
               <a href="#" className="btn btn-light mx-2">
-                <i class="far fa-comment-alt"></i> 2
+                <i className="far fa-comment-alt"></i> 2
               </a>
             </div>
           </div>
@@ -68,10 +68,10 @@ export default function ContentNews() {
                 Đề cử giải Oscar danh giá vừa gọi tên Carey Mulligan ở
               </p>
               <a href="#" className="btn btn-light">
-                <i class="far fa-thumbs-up"></i> 1
+                <i className="far fa-thumbs-up"></i> 1
               </a>
               <a href="#" className="btn btn-light mx-2">
-                <i class="far fa-comment-alt"></i> 3
+                <i className="far fa-comment-alt"></i> 3
               </a>
             </div>
           </div>
@@ -91,10 +91,10 @@ export default function ContentNews() {
                 Đề cử giải Oscar danh giá vừa gọi tên Carey Mulligan ở
               </p>
               <a href="#" className="btn btn-light">
-                <i class="far fa-thumbs-up"></i> 0
+                <i className="far fa-thumbs-up"></i> 0
               </a>
               <a href="#" className="btn btn-light mx-2">
-                <i class="far fa-comment-alt"></i> 2
+                <i className="far fa-comment-alt"></i> 2
               </a>
             </div>
           </div>

@@ -1,6 +1,9 @@
 import "./Carousel.css";
 
-import React from "react";
+import React, { useEffect } from "react";
+import Loading from "../Loading/Loading";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 //slider import
 import Slider from "react-slick";
@@ -25,6 +28,7 @@ export function SamplePrevArrow(props) {
       style={{
         backgroundImage: `url(${back})`,
         left: props.left,
+        top: props.top,
       }}
       onClick={onClick}
     />
@@ -32,13 +36,14 @@ export function SamplePrevArrow(props) {
 }
 
 export function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
       className="carouselIndicators"
       style={{
         backgroundImage: `url(${next})`,
         right: props.right,
+        top: props.top,
       }}
       onClick={onClick}
     />
@@ -47,33 +52,89 @@ export function SampleNextArrow(props) {
 
 //react functional component
 export default function Carousel() {
+  const { isLoadingCarousel } = useSelector((state) => state.LoadingReducer);
+
   const settings2 = {
     dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     speed: 2000,
     autoplaySpeed: 1500,
     nextArrow: <SampleNextArrow right="30px" />,
     prevArrow: <SamplePrevArrow left="30px" />,
     appendDots: (dots) => <ul> {dots} </ul>,
   };
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch({ type: "HIDE_LOADING_CAROUSEL" });
+    }, 1500);
+    return () => {};
+  }, []);
+
   return (
-    <div className="sliderTrailer ">
-      <Slider {...settings2}>
-        <div>
-          <img style={{ width: "100%", height: "620px" }} src={dietQuy}></img>
-          <PlayButton></PlayButton>
+    <div>
+      {isLoadingCarousel ? (
+        <Loading size="300px" />
+      ) : (
+        <div className="sliderTrailer ">
+          <Slider {...settings2}>
+            <div>
+              <NavLink to={`/detail/1315`}>
+                <div className="img-movie">
+                  <img
+                    style={{ width: "100%", height: "620px" }}
+                    src={dietQuy}
+                  ></img>
+                </div>
+              </NavLink>
+
+              <PlayButton
+                padding="5% 20%"
+                top="45%"
+                url="https://www.youtube.com/embed/kBY2k3G6LsM"
+              ></PlayButton>
+            </div>
+            <div>
+              <NavLink to={`/detail/1314`}>
+                <div className="img-movie">
+                  <img
+                    style={{ width: "100%", height: "620px" }}
+                    src={latMat}
+                  ></img>
+                </div>
+              </NavLink>
+
+              <PlayButton
+                padding="5% 20%"
+                top="45%"
+                url="https://www.youtube.com/embed/kBY2k3G6LsM"
+              ></PlayButton>
+            </div>
+            <div>
+              <NavLink to={`/detail/1316`}>
+                <div className="img-movie">
+                  <img
+                    style={{ width: "100%", height: "620px" }}
+                    src={trangTi}
+                  ></img>
+                </div>
+              </NavLink>
+
+              <PlayButton
+                padding="5% 20%"
+                top="45%"
+                url="https://www.youtube.com/embed/kBY2k3G6LsM"
+              ></PlayButton>
+            </div>
+          </Slider>
+          <HomeTool></HomeTool>
         </div>
-        <div>
-          <img style={{ width: "100%", height: "620px" }} src={latMat}></img>
-        </div>
-        <div>
-          <img style={{ width: "100%", height: "620px" }} src={trangTi}></img>
-        </div>
-      </Slider>
-      <HomeTool></HomeTool>
+      )}
     </div>
   );
 }

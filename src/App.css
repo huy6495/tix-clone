@@ -15,7 +15,7 @@
 }
 body {
   background-color: #fff;
-  font-family: "SF Text Regular";
+  font-family: "SF Text Regular" !important;
   overflow-x: hidden;
 }
 .titleDisplay {

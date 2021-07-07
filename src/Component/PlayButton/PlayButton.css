@@ -1,11 +1,9 @@
 svg#play {
-  width: 100%;
-  padding: 15% 45%;
+  width: 50%;
   display: inline-block;
   cursor: pointer;
   transform-origin: 50% 50%;
   position: absolute;
-  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -22,11 +20,14 @@ svg#play:hover #triangle {
 
 svg #lineOne,
 svg #lineTwo {
+  opacity: 0;
   transform-origin: 50% 50%;
-  transition: 1s;
+  transition: 1.2s ease;
 }
 
 svg:hover #lineOne {
+  opacity: 0.9;
+
   transform: rotate(260deg);
   -webkit-transform: rotate(260deg);
   -moz-transform: rotate(260deg);
@@ -35,6 +36,8 @@ svg:hover #lineOne {
 }
 
 svg:hover #lineTwo {
+  opacity: 0.9;
+
   transform: rotate(-450deg);
   transform-origin: 50% 50%;
 }

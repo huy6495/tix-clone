@@ -1,0 +1,54 @@
+.detail-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 500px;
+  width: 80%;
+}
+
+.detail-movie {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0));
+}
+.detail-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  background-position: 0 -400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.detail-card > div {
+  margin: 140px 0px;
+  border-radius: 0;
+  border: none;
+}
+
+.detail-content {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: top;
+  height: 100%;
+}
+
+#btn-buy {
+  background-color: #fb4226;
+  color: white;
+  border: none;
+  transition: all 0.5s;
+}
+#btn-buy:hover {
+  background-color: white;
+  color: #fb4226;
+  border: 1px solid #fb4226;
+}

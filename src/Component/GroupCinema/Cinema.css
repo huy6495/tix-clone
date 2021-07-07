@@ -22,7 +22,7 @@
   overflow: auto;
   padding: 0%;
   padding-bottom: 20px;
-  min-height: 605px;
+  height: 605px;
 }
 
 .list-cinema li {
@@ -44,11 +44,12 @@
   overflow: auto;
   padding: 0%;
   padding-bottom: 20px;
-  min-height: 605px;
+  height: 605px;
 }
 
 .list-cinema-detail li {
   padding-top: 15px;
+  padding-bottom: 15px;
   margin: 0 15px;
   border-bottom: 1px solid #eee;
 }
@@ -56,7 +57,6 @@
 .list-cinema-detail li img {
   width: 50px;
   display: inline-block;
-  transform: translateY(-50%);
 }
 .info-cinema {
   display: inline-block;
@@ -74,7 +74,7 @@
   display: block;
 }
 .time h6 {
-  background-color: tomato;
+  background-color: #fb4226;
   color: white;
   border-radius: 6.5%;
   width: fit-content;
@@ -85,7 +85,12 @@
   transition: all 0.8s;
 }
 .time h6:hover {
-  border: 1px solid tomato;
+  border: 1px solid #fb422613;
   background-color: white;
-  color: tomato;
+  color: #fb4226;
+}
+.cinema-chon {
+  border: 1px solid #fb4226;
+  border-radius: 11px;
+  background-color: #fb42262f;
 }

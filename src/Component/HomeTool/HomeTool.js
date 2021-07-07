@@ -1,65 +1,247 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  layChiTietPhim,
+  layChiTietPhimHomeTool,
+  layDanhSachPhim,
+  setDateHomeTool,
+  setXuatChieuHomeTool,
+} from "../../redux/action/MovieAction";
 import "./HomeTool.css";
 
-const dataDrop = [
-  {
-    title: "Phim",
-    arrayContent: ["Trạng Tí", "Lật Mặt", "Bố Già", "Em chưa mười tám"],
-  },
-  {
-    title: "Rạp",
-    arrayContent: [
-      "BHD Nguyễn Du",
-      "Galaxy Phan Xích Long",
-      "CineStar Khánh Hội",
-    ],
-  },
-  {
-    title: "Ngày xem",
-    arrayContent: ["01/06/2021", "07/06/2021", "02/06/2021", "05/06/2021"],
-  },
-  {
-    title: "Xuất chiếu",
-    arrayContent: ["14:00", "10:45", "12:15"],
-  },
-];
+export default function HomeTool() {
+  const {
+    arrayMovie,
+    detailMovieHomeTool,
+    objectLichChieu,
+    objectXuatChieu,
+    reSelectMovie,
+  } = useSelector((state) => state.MovieReducer);
 
-export default class HomeTool extends Component {
-  renderDropdown() {
-    return dataDrop.map((item) => {
-      return (
-        <div className="dropdown w30p widthByPercent">
-          <div className="dropdown-toggle selectMenu" data-bs-toggle="dropdown">
-            {item.title}
-          </div>
-          <ul className="dropdown-menu">
-            {(function a() {
-              return item.arrayContent.map((content) => {
-                return (
-                  <li>
-                    <a className="dropdown-item">{content}</a>
-                  </li>
-                );
-              });
-            })()}
-          </ul>
-        </div>
-      );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const action = layDanhSachPhim();
+    dispatch(action);
+    return () => {};
+  }, []);
+
+  const arrayMovieConvert = (list) => {
+    const newArray = [];
+    list.map((movie) => {
+      newArray.push({ maPhim: movie.maPhim, tenPhim: movie.tenPhim });
     });
-  }
+    return newArray;
+  };
 
-  render() {
+  const renderMovie = () => {
     return (
-      <div id="homeTools" className="hideOnMobile">
-        {this.renderDropdown()}
-        <div className="smallBlock widthByPercent">
-          <div className="after-btn" />
-          <div className="before-btn" />
-          <button id="btnBuy" type="button" className="btn btn-primary">
-            MUA VÉ NGAY
-          </button>
-        </div>
-      </div>
+      <select
+        onChange={(e) => {
+          dispatch(layChiTietPhimHomeTool(e.target.value));
+        }}
+        className="form-select menu w30p widthByPercent"
+      >
+        <option value="0">Phim</option>
+        {arrayMovieConvert(arrayMovie).map((movie, index) => {
+          return (
+            <option key={index} value={movie.maPhim}>
+              {movie.tenPhim}
+            </option>
+          );
+        })}
+      </select>
     );
-  }
+  };
+
+  const arrayLichChieuConvert = (detailLichChieuPhim) => {
+    const holder1 = [];
+    if (detailLichChieuPhim !== undefined) {
+      detailLichChieuPhim.map((item) => {
+        holder1.push({
+          tenCumRap: item.thongTinRap.tenCumRap,
+          ngayChieu: item.ngayChieuGioChieu,
+        });
+      });
+    }
+    const holder2 = {};
+    holder1.forEach((item) => {
+      if (holder2.hasOwnProperty(item.tenCumRap)) {
+        holder2[item.tenCumRap].push(item.ngayChieu);
+      } else {
+        holder2[item.tenCumRap] = [item.ngayChieu];
+      }
+    });
+    const holder3 = [];
+    for (let prop in holder2) {
+      holder3.push({
+        tenCumRap: prop,
+        ngayGioChieu: convertArrayNgayChieu(
+          (function () {
+            const holder5 = [];
+            holder2[prop].map((i) => {
+              holder5.push(convertIso(i));
+            });
+            return holder5;
+          })()
+        ),
+      });
+    }
+    return holder3;
+  };
+
+  const convertIso = (isoFormat) => {
+    let date = new Date(isoFormat);
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let dt = date.getDate();
+    let hour = date.getHours();
+    let min = date.getMinutes();
+    if (dt < 10) {
+      dt = "0" + dt;
+    }
+    if (month < 10) {
+      month = "0" + month;
+    }
+    if (hour < 10) {
+      hour = "0" + hour;
+    }
+    if (min < 10) {
+      min = "0" + min;
+    }
+    return {
+      ngayChieu: dt + "-" + month + "-" + year,
+      suatChieu: hour + ":" + min,
+    };
+  };
+
+  const convertArrayNgayChieu = (arrayObjectNgayChieu) => {
+    const holder4 = {};
+    arrayObjectNgayChieu.forEach((lich) => {
+      if (holder4.hasOwnProperty(lich.ngayChieu)) {
+        holder4[lich.ngayChieu].push(lich.suatChieu);
+      } else {
+        holder4[lich.ngayChieu] = [lich.suatChieu];
+      }
+    });
+    const arrayFinal = [];
+    for (let prop in holder4) {
+      arrayFinal.push({ ngayChieu: prop, suatChieu: holder4[prop] });
+    }
+    return arrayFinal;
+  };
+
+  const renderCinema = () => {
+    return (
+      <select
+        onChange={(e) => {
+          dispatch({ type: "SET_CINEMA_HOME_TOOL" });
+
+          const action = setDateHomeTool(
+            (function () {
+              return arrayLichChieuConvert(detailMovieHomeTool.lichChieu).find(
+                (item) => {
+                  return (item.tenCumRap = e.target.value);
+                }
+              );
+            })()
+          );
+
+          dispatch(action);
+        }}
+        className="form-select menu w30p widthByPercent"
+      >
+        <option value="0">Rạp</option>
+        {(function () {
+          if (detailMovieHomeTool.maPhim == undefined) {
+            return <option disabled>- Vui lòng chọn phim</option>;
+          } else if (reSelectMovie === true) {
+            return <option disabled>- Chờ xíu nha...</option>;
+          } else {
+            return arrayLichChieuConvert(detailMovieHomeTool.lichChieu).map(
+              (lichChieu) => {
+                return (
+                  <option value={lichChieu.tenCumRap}>
+                    {lichChieu.tenCumRap}
+                  </option>
+                );
+              }
+            );
+          }
+        })()}
+      </select>
+    );
+  };
+
+  const renderNgayChieu = () => {
+    return (
+      <select
+        onChange={(e) => {
+          const action = setXuatChieuHomeTool(
+            (function () {
+              return objectLichChieu.ngayGioChieu.find((item) => {
+                return (item.ngayChieu = e.target.value);
+              });
+            })()
+          );
+          dispatch(action);
+        }}
+        className="form-select menu w30p widthByPercent"
+      >
+        <option value="0">Ngày chiếu</option>
+        {(function () {
+          if (objectLichChieu.ngayGioChieu == undefined) {
+            return <option disabled>- Vui lòng chọn phim</option>;
+          } else {
+            return objectLichChieu.ngayGioChieu.map((ob, index) => {
+              return (
+                <option key={index} value={ob.ngayChieu}>
+                  {ob.ngayChieu}
+                </option>
+              );
+            });
+          }
+        })()}
+      </select>
+    );
+  };
+
+  const renderSuatChieu = () => {
+    return (
+      <select className="form-select menu w30p widthByPercent">
+        <option value="0">Suất chiếu</option>
+        {(function () {
+          if (objectXuatChieu.suatChieu == undefined) {
+            return <option disabled>- Vui lòng chọn phim</option>;
+          } else {
+            return objectXuatChieu.suatChieu.map((ob, index) => {
+              return (
+                <option key={index} value={ob}>
+                  {ob}
+                </option>
+              );
+            });
+          }
+        })()}
+      </select>
+    );
+  };
+
+  //rfc return JSX
+  return (
+    <div id="homeTools" className="hideOnMobile">
+      {renderMovie()}
+      {renderCinema()}
+      {renderNgayChieu()}
+      {renderSuatChieu()}
+
+      <div className="smallBlock widthByPercent">
+        <div className="after-btn" />
+        <div className="before-btn" />
+        <button id="btnBuy" type="button" className="btn btn-primary">
+          MUA VÉ NGAY
+        </button>
+      </div>
+    </div>
+  );
 }

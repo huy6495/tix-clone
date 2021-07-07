@@ -1,0 +1,38 @@
+.heading {
+  font-size: 46px;
+  line-height: 1.13043;
+  text-align: center;
+  margin-top: 108px;
+}
+
+.tong-tien {
+  color: rgb(254, 132, 49);
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact {
+  font-size: 14px;
+  font-weight: 400;
+  color: #282828;
+  text-align: center;
+}
+
+.contact .note {
+  opacity: 0.5;
+}
+
+.backroundImg {
+  margin-top: -60px;
+  background-size: contain;
+  background-position: center;
+  width: 100vw;
+  height: 200vh;
+  margin: 20px auto;
+  float: left;
+}
+
+p {
+  color: #fff;
+}

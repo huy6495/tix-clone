@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-//logos of partners
+//import logos of partners
 import cgv from "../../assets/icons/cgv.png";
 import bhd from "../../assets/icons/bhd.png";
 import galaxy from "../../assets/icons/galaxycine.png";
@@ -60,12 +60,11 @@ const arrayLogo4 = [
 ];
 
 //react functional component
-
 export default function Footer() {
   const renderPartners = (arrayLogo) => {
-    return arrayLogo.map((item) => {
+    return arrayLogo.map((item, index) => {
       return (
-        <a target="_blank" href={item.url}>
+        <a key={index} target="_blank" href={item.url} key={index}>
           <img
             className="iconConnect"
             src={item.img}
@@ -171,7 +170,7 @@ export default function Footer() {
                 href="http://online.gov.vn/Home/WebDetails/62782"
               >
                 <img
-                  class="imgBoCo"
+                  className="imgBoCo"
                   alt="Bộ Công Thương"
                   title=""
                   src={boCongThuong}
