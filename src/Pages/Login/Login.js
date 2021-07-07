@@ -7,6 +7,7 @@ import logoHeader from "../../assets/img/Login/signHeader.png";
 import LoginFilm from "../../Component/Login/LoginFilm";
 
 export default function Login() {
+  const [redirect, setRedirect] = useState(false);
   return (
     <div className="container-fluid" id="mainLogin">
       <div

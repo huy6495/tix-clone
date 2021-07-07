@@ -6,6 +6,7 @@ import CirclePercent from "../../Component/CirclePercent/CirclePercent";
 import PlayButton from "../../Component/PlayButton/PlayButton";
 import { layChiTietPhim } from "../../redux/action/MovieAction";
 import Loading from "../Loading/Loading";
+import HomeToolForDetail from "../HomeToolForDetail/HomeToolForDetail";
 
 export default function Detail(props) {
   const { detailMovie, isLoadingDetail } = useSelector(
@@ -70,21 +71,8 @@ export default function Detail(props) {
                     <br />
                     <span className="timeFilm">Thời lượng: 100p</span>
                   </div>
-                  <div className="mt-4">
-                    <button id="btn-buy" className="btn btn-warning px-4">
-                      Mua vé
-                    </button>
-                    <button
-                      className="btn btn-secondary mx-3 px-4"
-                      style={{
-                        color: "white",
-                        border: "none",
-                      }}
-                    >
-                      Về trang chủ
-                    </button>
-                  </div>
                 </div>
+                <HomeToolForDetail maPhim={id} />
               </div>
               <div className="col-md-3">
                 <div className="row">

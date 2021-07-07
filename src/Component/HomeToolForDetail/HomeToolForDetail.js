@@ -8,11 +8,10 @@ import {
   setDateHomeTool,
   setXuatChieuHomeTool,
 } from "../../redux/action/MovieAction";
-import "./HomeTool.css";
+import "./HomeToolForDetail.css";
 
-export default function HomeTool() {
+export default function HomeToolForDetail(props) {
   const {
-    arrayMovie,
     detailMovieHomeTool,
     objectLichChieu,
     objectXuatChieu,
@@ -23,38 +22,10 @@ export default function HomeTool() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const action = layDanhSachPhim();
+    const action = layChiTietPhimHomeTool(props.maPhim);
     dispatch(action);
     return () => {};
   }, []);
-
-  const arrayMovieConvert = (list) => {
-    const newArray = [];
-    list.map((movie) => {
-      newArray.push({ maPhim: movie.maPhim, tenPhim: movie.tenPhim });
-    });
-    return newArray;
-  };
-
-  const renderMovie = () => {
-    return (
-      <select
-        onChange={(e) => {
-          dispatch(layChiTietPhimHomeTool(e.target.value));
-        }}
-        className="form-select menu w30p widthByPercent"
-      >
-        <option value="0">Phim</option>
-        {arrayMovieConvert(arrayMovie).map((movie, index) => {
-          return (
-            <option key={index} value={movie.maPhim}>
-              {movie.tenPhim}
-            </option>
-          );
-        })}
-      </select>
-    );
-  };
 
   const arrayLichChieuConvert = (detailLichChieuPhim) => {
     const holder1 = [];
@@ -151,7 +122,7 @@ export default function HomeTool() {
 
           dispatch(action);
         }}
-        className="form-select menu w30p widthByPercent"
+        className="form-select menu w-25 widthByPercent"
       >
         <option value="0">Rạp</option>
         {(function () {
@@ -188,12 +159,12 @@ export default function HomeTool() {
           );
           dispatch(action);
         }}
-        className="form-select menu w30p widthByPercent"
+        className="form-select menu w-25 widthByPercent"
       >
         <option value="0">Ngày chiếu</option>
         {(function () {
           if (objectLichChieu.ngayGioChieu == undefined) {
-            return <option disabled>- Vui lòng chọn phim</option>;
+            return <option disabled>- Vui lòng chọn rạp</option>;
           } else {
             return objectLichChieu.ngayGioChieu.map((ob, index) => {
               return (
@@ -210,11 +181,11 @@ export default function HomeTool() {
 
   const renderSuatChieu = () => {
     return (
-      <select className="form-select menu w30p widthByPercent">
+      <select className="form-select menu w-25 widthByPercent">
         <option value="0">Suất chiếu</option>
         {(function () {
           if (objectXuatChieu.suatChieu == undefined) {
-            return <option disabled>- Vui lòng chọn phim</option>;
+            return <option disabled>- Vui lòng chọn rạp</option>;
           } else {
             return objectXuatChieu.suatChieu.map((ob, index) => {
               return (
@@ -231,8 +202,7 @@ export default function HomeTool() {
 
   //rfc return JSX
   return (
-    <div id="homeTools" className="hideOnMobile">
-      {renderMovie()}
+    <div id="homeToolsForDetail">
       {renderCinema()}
       {renderNgayChieu()}
       {renderSuatChieu()}
@@ -240,7 +210,6 @@ export default function HomeTool() {
       <div className="smallBlock widthByPercent">
         <div className="after-btn" />
         <div className="before-btn" />
-
         <NavLink to={tenLogin ? "/booking" : "/login"}>
           <button id="btnBuy" type="button" className="btn btn-primary">
             MUA VÉ NGAY

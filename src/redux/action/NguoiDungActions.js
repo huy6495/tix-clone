@@ -1,5 +1,10 @@
 import axios from "axios";
-import { history } from "../../App";
+import {
+  BrowserRouter,
+  Redirect,
+  useHistory,
+  useLocation,
+} from "react-router-dom";
 import { ACCESSTOKEN, USER_LOGIN } from "../../util/setting";
 
 export const dangNhapAction = (userLogin) => {
@@ -19,7 +24,7 @@ export const dangNhapAction = (userLogin) => {
       localStorage.setItem(ACCESSTOKEN, result.data);
 
       alert("Dang nhap thanh cong");
-      history.push("/home");
+      return <Redirect to="/home" />;
     } catch (errors) {
       console.log("errors", errors.reponse?.data);
     }

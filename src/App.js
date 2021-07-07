@@ -7,14 +7,12 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 
 //config for director page
-import { createBrowserHistory } from "history";
+// import { createBrowserHistory } from "history";
 import DatVe from "./Pages/DatVe/DatVe";
-
-export const history = createBrowserHistory();
 
 function App() {
   return (
-    <BrowserRouter history={history}>
+    <BrowserRouter>
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/detail/:id" exact component={DetailPage} />

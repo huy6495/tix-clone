@@ -3,11 +3,12 @@ import img from "../../assets/img/web-logo.png";
 import imgLogin from "../../assets/img/avatar.png";
 import imgLocation from "../../assets/img/location-header.png";
 import "./Header.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
-  const { tenLogin } = useSelector((state) => state.NguoiDungReducer);
+  const { tenLogin, reDirect } = useSelector((state) => state.NguoiDungReducer);
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -21,10 +22,14 @@ export default function Header() {
           </a>
           <a href="#group-cinema">Cụm rạp</a>
           <a href="#news-total">Tin Tức</a>
-          <a href="appblock">Ứng dụng</a>
+          <a href="#">Ứng dụng</a>
         </div>
         <div className="right">
-          <div id="account" className="imgCircle">
+          <div
+            id="account"
+            className="imgCircle"
+            onClick={() => dispatch({ type: "SET_REDIRECT" })}
+          >
             <NavLink
               className="nav-link active"
               aria-current="page"

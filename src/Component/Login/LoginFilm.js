@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { form, Field, useFormik } from "formik";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import * as Yup from "yup";
 import { dangNhapAction } from "../../redux/action/NguoiDungActions";
 
 import "./LoginFilm.css";
 
 export default function LoginFilm(props) {
+  const { reDirect } = useSelector((state) => state.NguoiDungReducer);
   const dispatch = useDispatch();
 
   const formik = useFormik({
@@ -32,60 +33,69 @@ export default function LoginFilm(props) {
   });
 
   return (
-    <div className="center-container">
-      <div className="main-content-agile">
-        <div className="sub-main-w3">
-          <form onSubmit={formik.handleSubmit}>
-            <div className="pom-agile form-group">
-              <input
-                placeholder="Username"
-                name="taiKhoan"
-                className="user form-control"
-                type="text"
-                onChange={formik.handleChange}
-              />
-              {formik.touched && formik.errors ? (
-                <p className="text-danger">{formik.errors.taiKhoan}</p>
-              ) : (
-                ""
-              )}
-              <span className="icon1">
-                <i className="fa fa-user" aria-hidden="true" />
-              </span>
+    <div>
+      {reDirect ? (
+        <Redirect to="/home" />
+      ) : (
+        <div className="center-container">
+          <div className="main-content-agile">
+            <div className="sub-main-w3">
+              <form onSubmit={formik.handleSubmit}>
+                <div className="pom-agile form-group">
+                  <input
+                    placeholder="Username"
+                    name="taiKhoan"
+                    className="user form-control"
+                    type="text"
+                    onChange={formik.handleChange}
+                  />
+                  {formik.touched && formik.errors ? (
+                    <p className="text-danger">{formik.errors.taiKhoan}</p>
+                  ) : (
+                    ""
+                  )}
+                  <span className="icon1">
+                    <i className="fa fa-user" aria-hidden="true" />
+                  </span>
+                </div>
+                <div className="pom-agile form-group">
+                  <input
+                    placeholder="Password"
+                    name="matKhau"
+                    className="pass form-control"
+                    type="password"
+                    onChange={formik.handleChange}
+                  />
+                  {formik.touched.matKhau && formik.errors.matKhau ? (
+                    <p className="text-danger">{formik.errors.matKhau}</p>
+                  ) : (
+                    ""
+                  )}
+                  <span className="icon2">
+                    <i className="fa fa-unlock" aria-hidden="true" />
+                  </span>
+                </div>
+                <div className="sub-w3l">
+                  <h6
+                    className="register"
+                    onClick={() => dispatch({ type: "SET_REDIRECT_DANGKI" })}
+                  >
+                    <NavLink to="/register">Register</NavLink>
+                  </h6>
+                  <h6 className="forgotpass">
+                    <a href="#">Forgot Password?</a>
+                  </h6>
+                </div>
+                <input
+                  onSubmit={formik.handleSubmit}
+                  type="submit"
+                  defaultValue="Login"
+                />
+              </form>
             </div>
-            <div className="pom-agile form-group">
-              <input
-                placeholder="Password"
-                name="matKhau"
-                className="pass form-control"
-                type="password"
-                onChange={formik.handleChange}
-              />
-              {formik.touched.matKhau && formik.errors.matKhau ? (
-                <p className="text-danger">{formik.errors.matKhau}</p>
-              ) : (
-                ""
-              )}
-              <span className="icon2">
-                <i className="fa fa-unlock" aria-hidden="true" />
-              </span>
-            </div>
-            <div className="sub-w3l">
-              <h6 className="register">
-                <NavLink to="/register">Register</NavLink>
-              </h6>
-              <h6 className="forgotpass">
-                <a href="#">Forgot Password?</a>
-              </h6>
-            </div>
-            <input
-              onSubmit={formik.handleSubmit}
-              type="submit"
-              defaultValue="Login"
-            />
-          </form>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

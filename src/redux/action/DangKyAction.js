@@ -1,15 +1,17 @@
 import axios from "axios";
+import { BrowserRouter } from "react-router-dom";
 
-import { history } from "../../App";
 import { ACCESSTOKEN, USER_REGISTER } from "../../util/setting";
 
 export const dangKyAction = (userRegister) => {
   const fullUser = {
-    ...userRegister,
+    taiKhoan: userRegister.taiKhoan,
+    matKhau: userRegister.matKhau,
+    email: userRegister.email,
     soDt: "",
     maNhom: "GP01",
     maLoaiNguoiDung: "hocVien",
-    hoTen: "hoang",
+    hoTen: `${Math.random()}`,
   };
   return async (dispatch) => {
     try {
@@ -26,7 +28,6 @@ export const dangKyAction = (userRegister) => {
       localStorage.setItem(ACCESSTOKEN, result1.data);
 
       alert("Dang ky thanh cong");
-      history.push("/login");
     } catch (errors) {
       console.log(errors.reponse?.data);
     }
