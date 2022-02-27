@@ -2,10 +2,7 @@ import { Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import {
-  layChiTietPhim,
-  layDanhSachPhim,
-} from "../../redux/action/MovieAction";
+import { layDanhSachPhim } from "../../redux/action/MovieAction";
 import "./Admin.css";
 import MovieDetailModal from "./MovieDetailModal/MovieDetailModal";
 import { DOMAIN } from "../../util/setting";
