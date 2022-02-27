@@ -28,3 +28,9 @@
   background-color: #fa5238;
   border: none;
 }
+@media only screen and (max-width: 768px) {
+  .news-title {
+    font-size: 15px;
+    padding-right: 10px;
+  }
+}

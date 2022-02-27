@@ -6,7 +6,7 @@
 }
 
 .col-1 {
-  /* width: 10%; */
+  width: 10%;
 }
 .row {
   margin: 0%;
@@ -93,4 +93,14 @@
   border: 1px solid #fb4226;
   border-radius: 11px;
   background-color: #fb42262f;
+}
+
+@media only screen and (max-width: 768px) {
+  .list-cinema,
+  .list-cinema-detail {
+    height: 480px;
+  }
+  .list-final {
+    padding-top: 20px;
+  }
 }

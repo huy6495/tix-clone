@@ -4,7 +4,8 @@ import "./Modal.css";
 
 export default function Modal() {
   const { url } = useSelector((state) => state.ModalReducer);
-
+  // let url1 = data.url + "&output=embed";
+  // window.location.replace(url1);
   // useEffect(() => {}, [url]);
 
   // console.log(idModal, url);
@@ -23,16 +24,10 @@ export default function Modal() {
                 className="btn-close"
                 data-bs-dismiss="modal"
               />
-              <div
-                className="embed-responsive embed-responsive-16by9"
-                style={{ position: "relative" }}
-              >
+              <div className="embed-responsive embed-responsive-16by9 container-iframe">
                 <iframe
-                  width="100%"
-                  height="450px"
-                  src={url}
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  className="responsive-iframe"
+                  src={`${url.replace("watch?v=", "embed/")}`}
                 ></iframe>
               </div>
             </div>

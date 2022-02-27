@@ -13,6 +13,7 @@
   float: none;
   margin: auto;
   clear: both;
+  padding: 0 15px;
 }
 
 .textLeft {
@@ -83,4 +84,12 @@ p {
 
 #sliderScreen .slick-list {
   border-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .right {
+    position: relative;
+    padding: 0;
+    transform: translate(10%, 15%);
+  }
 }

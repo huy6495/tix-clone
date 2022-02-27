@@ -13,12 +13,12 @@ export default function LoginFilm(props) {
 
   const formik = useFormik({
     initialValues: {
-      taiKhoan: "",
-      matKhau: "",
+      username: "",
+      password: "",
     },
     validationSchema: Yup.object().shape({
-      taiKhoan: Yup.string().required("Tài khoản không được bỏ trống"),
-      matKhau: Yup.string()
+      username: Yup.string().required("Tài khoản không được bỏ trống"),
+      password: Yup.string()
         .min(6, "Mật khẩu tối thiểu 6 ký tự")
         .max(32, "Mật khẩu tối đa 32 ký tự")
         .required("Mật khẩu không được bỏ trống"),
@@ -44,13 +44,13 @@ export default function LoginFilm(props) {
                 <div className="pom-agile form-group">
                   <input
                     placeholder="Username"
-                    name="taiKhoan"
+                    name="username"
                     className="user form-control"
                     type="text"
                     onChange={formik.handleChange}
                   />
                   {formik.touched && formik.errors ? (
-                    <p className="text-danger">{formik.errors.taiKhoan}</p>
+                    <p className="text-danger">{formik.errors.username}</p>
                   ) : (
                     ""
                   )}
@@ -61,13 +61,13 @@ export default function LoginFilm(props) {
                 <div className="pom-agile form-group">
                   <input
                     placeholder="Password"
-                    name="matKhau"
+                    name="password"
                     className="pass form-control"
                     type="password"
                     onChange={formik.handleChange}
                   />
-                  {formik.touched.matKhau && formik.errors.matKhau ? (
-                    <p className="text-danger">{formik.errors.matKhau}</p>
+                  {formik.touched.password && formik.errors.password ? (
+                    <p className="text-danger">{formik.errors.password}</p>
                   ) : (
                     ""
                   )}

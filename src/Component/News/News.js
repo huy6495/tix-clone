@@ -6,7 +6,7 @@ import ContentNews from "../ContentNews/ContentNews";
 
 export default function News() {
   return (
-    <div id="news-total">
+    <div id="newsTotal">
       <BackgroundCinema
         style={{ opacity: 0.4, height: "150px" }}
       ></BackgroundCinema>
@@ -14,7 +14,7 @@ export default function News() {
         <ul className="nav nav-tabs navCenter my-5">
           <li className="nav-item">
             <button
-              className="nav-link active"
+              className="nav-link active news-title"
               data-bs-toggle="tab"
               data-bs-target="#news"
             >
@@ -23,7 +23,7 @@ export default function News() {
           </li>
           <li className="nav-item">
             <button
-              className="nav-link"
+              className="nav-link news-title"
               data-bs-toggle="tab"
               data-bs-target="#review"
             >
@@ -32,7 +32,7 @@ export default function News() {
           </li>
           <li className="nav-item">
             <button
-              className="nav-link"
+              className="nav-link news-title"
               data-bs-toggle="tab"
               data-bs-target="#review"
             >

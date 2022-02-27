@@ -9,6 +9,7 @@ import Register from "./Pages/Register/Register";
 //config for director page
 // import { createBrowserHistory } from "history";
 import DatVe from "./Pages/DatVe/DatVe";
+import Admin from "./Pages/QuanLy/Admin";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/register" exact component={Register} />
         <Route path="/booking" exact component={DatVe} />
+
+        <Route path="/admin" exact component={Admin} />
 
         <Route path="/" exact component={Home} />
       </Switch>

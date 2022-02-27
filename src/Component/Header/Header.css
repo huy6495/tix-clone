@@ -28,6 +28,7 @@
 }
 
 #headMenu a {
+  cursor: pointer;
   color: #000;
   transition: all 0.2s;
   text-decoration: none;
@@ -90,6 +91,7 @@
   margin-right: 5px;
 }
 #navbarHeader .selectLocation {
+  /* cursor: pointer; */
   padding: 0 125px 0 8px;
 }
 #navbarHeader .selectLocation .dropdown-menu {
@@ -122,4 +124,28 @@
   padding-right: 25px;
   padding-left: 30px;
   text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+  #navbarHeader .selectLocation,
+  #navbarHeader .imgCircle img {
+    display: none !important;
+  }
+  #navbarHeader {
+    font-size: smaller;
+  }
+  .nav-link {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  #navbarHeader {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #navbarHeader {
+    font-size: 8px;
+  }
 }

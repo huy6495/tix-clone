@@ -60,8 +60,8 @@ export default function DanhSachGhe() {
 
   return (
     <div className="row">
-      <div classname="col-12">
-        <h2 classname="heading">Đặt Ghế Online</h2>
+      <div className="col-12">
+        <h2 className="heading">Đặt Ghế Online</h2>
         <hr />
       </div>
       <div className="screen text-center">SCREEN</div>

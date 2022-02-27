@@ -7,12 +7,15 @@ import PlayButton from "../../Component/PlayButton/PlayButton";
 import { layChiTietPhim } from "../../redux/action/MovieAction";
 import Loading from "../Loading/Loading";
 import HomeToolForDetail from "../HomeToolForDetail/HomeToolForDetail";
+import { DOMAIN } from "../../util/setting";
 
 export default function Detail(props) {
   const { detailMovie, isLoadingDetail } = useSelector(
     (state) => state.MovieReducer
   );
   const { id } = props;
+
+  console.log(DOMAIN + detailMovie.hinhAnh);
 
   const dispatch = useDispatch();
 
@@ -27,7 +30,7 @@ export default function Detail(props) {
       <section className="detail-movie">
         <div
           className="detail-overlay"
-          style={{ backgroundImage: `url(${detailMovie.hinhAnh})` }}
+          style={{ backgroundImage: `url(${DOMAIN + detailMovie.hinhAnh})` }}
         ></div>
         <div className="container detail-card">
           <div className="card">
@@ -41,7 +44,7 @@ export default function Detail(props) {
                   }}
                 >
                   <img
-                    src={detailMovie.hinhAnh}
+                    src={DOMAIN + detailMovie.hinhAnh}
                     alt="latMat"
                     style={{ width: "100%", height: "100%" }}
                   />
@@ -53,8 +56,11 @@ export default function Detail(props) {
                   />
                 </div>
               </div>
-              <div className="col-md-6 detail-content d-flex justify-content-center overflow-auto">
-                <div className="card-body" style={{ padding: "50px 50px" }}>
+              <div className="col-md-6 detail-content d-flex justify-content-center overflow-auto c">
+                <div
+                  className="card-body content-detail"
+                  style={{ padding: "50px 50px" }}
+                >
                   <h3
                     className="card-title text-center"
                     style={{ color: "#fa5238" }}
@@ -74,9 +80,9 @@ export default function Detail(props) {
                 </div>
                 <HomeToolForDetail maPhim={id} />
               </div>
-              <div className="col-md-3">
+              <div className="col-md-3 score-detail">
                 <div className="row">
-                  <div className="col-12 mt-5 d-flex justify-content-center">
+                  <div className="col-md-12 mt-5 d-flex justify-content-center ">
                     <CirclePercent percent={percent} />
                   </div>
                   <div className="col-12 text-center">

@@ -1,12 +1,5 @@
 #homeMovies {
-  padding-top: 75px;
-}
-
-.mainMaxWidth {
-  max-width: 940px;
-  float: none;
-  margin: auto;
-  clear: both;
+  padding-top: 55px;
 }
 
 .nav-tabs {
@@ -39,10 +32,16 @@
 }
 
 #homeMovies .navCenter button:hover {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .nav-tabs .nav-link.active {
   color: #fa5238;
-  font-size: 24px;
+  font-size: 22px;
+}
+
+@media only screen and(max-width: 768px) {
+  .nav-tabs.navCenter li button {
+    font-size: 15px;
+  }
 }

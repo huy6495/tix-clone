@@ -51,9 +51,13 @@ export default class HomeApp extends Component {
         <div id="homeApp" style={{ background: "url(" + Img + ")" }}>
           <div className="mainMaxWidth">
             <div className="row">
-              <div className="col-md-6 text-left" style={{ fontWeight: 300 }}>
-                <p className="textLeft">Ứng dụng tiện lợi dành cho</p>
-                <p className="textLeft">người yêu điện ảnh</p>
+              <div
+                className="col-md-6 col-12 text-left"
+                style={{ fontWeight: 300 }}
+              >
+                <p className="textLeft">
+                  Ứng dụng tiện lợi dành cho người yêu điện ảnh
+                </p>
                 <br />
                 <p className="textSmallLeft">
                   Không chỉ đặt vé, bạn còn có thể bình luận phim, chấm điểm rạp

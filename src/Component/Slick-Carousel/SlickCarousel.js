@@ -32,10 +32,14 @@ export default function SlickCarousel(props) {
           style={{ border: "none" }}
           onClick={() => dispatch({ type: "DISPLAY_LOADING_DETAIL" })}
         >
-          <NavLink to={`/detail/${movie.maPhim}`}>
+          <NavLink to={`/detail/${movie.id}`}>
             <div className="img-movie">
               <img
-                src={movie.hinhAnh}
+                src={
+                  movie.hinhAnh.startsWith("http://movie")
+                    ? movie.hinhAnh
+                    : `http://localhost:7789/${movie.hinhAnh}`
+                }
                 className="card-img-top"
                 style={{ height: "280px" }}
                 alt={movie.tenPhim}
@@ -64,8 +68,19 @@ export default function SlickCarousel(props) {
     rows: 2,
     slidesPerRow: 2,
     autoplaySpeed: 1000,
-    nextArrow: <SampleNextArrow right="-55px" top="35%" />,
-    prevArrow: <SamplePrevArrow left="-55px" top="35%" />,
+    nextArrow: <SampleNextArrow right="-50px" top="35%" />,
+    prevArrow: <SamplePrevArrow left="-50px" top="35%" />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2,
+          nextArrow: <SampleNextArrow right="-20px" top="45%" />,
+          prevArrow: <SamplePrevArrow left="-20px" top="45%" />,
+        },
+      },
+    ],
   };
 
   return (

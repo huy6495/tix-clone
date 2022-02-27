@@ -1,5 +1,5 @@
 const initialState = {
-  url: "https://youtu.be/kBY2k3G6LsM",
+  url: "",
 };
 
 export default (state = initialState, action) => {

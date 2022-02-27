@@ -7,6 +7,7 @@ import { DatVeReducer } from "./reducer/DatVeReducer";
 import { DangKyReducer } from "./reducer/DangKyReducer";
 import { NguoiDungReducer } from "./reducer/NguoiDungReducer";
 import LoadingReducer from "./reducer/LoadingReducer";
+import AdminReducer from "./reducer/AdminReducer";
 
 const rootReducer = combineReducers({
   MovieReducer,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   DangKyReducer,
   NguoiDungReducer,
   LoadingReducer,
+  AdminReducer,
 });
 
 export const store = createStore(rootReducer, applyMiddleware(reduxThunk));

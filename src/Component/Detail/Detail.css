@@ -52,3 +52,15 @@
   color: #fb4226;
   border: 1px solid #fb4226;
 }
+
+@media only screen and (max-width: 768px) {
+  .score-detail {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .content-detail {
+    opacity: 0;
+  }
+}

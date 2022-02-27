@@ -59,7 +59,7 @@ export default function Carousel() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 2000,
     autoplaySpeed: 1500,
     nextArrow: <SampleNextArrow right="30px" />,
@@ -77,7 +77,7 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div>
+    <div className="carousel">
       {isLoadingCarousel ? (
         <Loading size="300px" />
       ) : (
@@ -86,10 +86,7 @@ export default function Carousel() {
             <div>
               <NavLink to={`/detail/1315`}>
                 <div className="img-movie">
-                  <img
-                    style={{ width: "100%", height: "620px" }}
-                    src={dietQuy}
-                  ></img>
+                  <img className="img-carousel" src={dietQuy}></img>
                 </div>
               </NavLink>
 
@@ -102,10 +99,7 @@ export default function Carousel() {
             <div>
               <NavLink to={`/detail/1314`}>
                 <div className="img-movie">
-                  <img
-                    style={{ width: "100%", height: "620px" }}
-                    src={latMat}
-                  ></img>
+                  <img className="img-carousel" src={latMat}></img>
                 </div>
               </NavLink>
 
@@ -118,10 +112,7 @@ export default function Carousel() {
             <div>
               <NavLink to={`/detail/1316`}>
                 <div className="img-movie">
-                  <img
-                    style={{ width: "100%", height: "620px" }}
-                    src={trangTi}
-                  ></img>
+                  <img className="img-carousel" src={trangTi}></img>
                 </div>
               </NavLink>
 

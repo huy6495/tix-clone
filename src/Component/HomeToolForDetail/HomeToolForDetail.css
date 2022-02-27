@@ -1,7 +1,6 @@
-#homeToolsForDetail {
+.homeToolsForDetail {
   display: block;
-  max-width: 800px;
-  /* margin: auto; */
+  max-width: 700px;
   height: 80px;
   position: absolute;
   bottom: -75px;
@@ -25,8 +24,12 @@
   border-right-color: rgba(238, 238, 238, 0.88);
 }
 
-.w30p {
+.w20p {
   width: 20%;
+}
+
+.w30p {
+  width: 27%;
 }
 
 .widthByPercent {
@@ -58,7 +61,7 @@
   width: calc(70% / 4);
 }
 
-#btnBuy {
+/* #btnBuy {
   background-color: #4a4a4a;
   border: none;
   text-transform: uppercase;
@@ -68,8 +71,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px 25px;
-}
-
+} */
+/* 
 #homeTools a {
   cursor: pointer;
-}
+} */

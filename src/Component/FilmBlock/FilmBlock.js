@@ -1,12 +1,11 @@
 import React from "react";
 import SlickCarousel from "../Slick-Carousel/SlickCarousel";
 import "./FilmBlock.css";
-import { layDanhSachPhim } from "../Slick-Carousel/SlickCarousel";
 
 export default function FilmBlock() {
   return (
-    <div className="container text-center">
-      <div className="col-xs-12 block mainMaxWidth" id="homeMovies">
+    <div id="homeMovies" className="container text-center">
+      <div className="col-xs-12 block mainMaxWidth">
         <ul className="nav nav-tabs navCenter">
           <li className="nav-item">
             <button

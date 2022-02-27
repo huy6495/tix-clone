@@ -80,7 +80,7 @@ export default function Footer() {
       <div className="col-xs-12 ">
         <div className="mainMaxWidth">
           <div className="row">
-            <div className="col-sm-4">
+            <div className="col-sm-4 container col-8 text-center">
               <p className="title noPadding">TIX</p>
               <div className="row">
                 <div className="col-sm-6 noPaddingLeft fontSizeA">
@@ -93,7 +93,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="col-sm-4 col-xs-12">
+            <div className="col-sm-4 col-xs-12 container col-12 text-center">
               <p className="title">Đối tác</p>
               <div className="col-sm-12 col-xs-12 linePartner">
                 {renderPartners(arrayLogo1)}

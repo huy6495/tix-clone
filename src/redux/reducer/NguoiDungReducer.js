@@ -1,7 +1,8 @@
 let tenDN = null;
 if (localStorage.getItem("userLogin")) {
+  // console.log(localStorage.getItem("userLogin"));
   let userLogin = JSON.parse(localStorage.getItem("userLogin"));
-  tenDN = userLogin.taiKhoan;
+  tenDN = userLogin.username;
 }
 
 const stateDefault = {
